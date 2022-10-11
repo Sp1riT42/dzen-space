@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import { store } from '@core/store';
 
 import './index.css';
 
@@ -14,7 +17,10 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
 	// Attention! React.StrictMode was disabled, because it fired warning
 	// <React.StrictMode>
-	<App />,
+	<Provider store={store}>
+		<App />
+	</Provider>,
+
 	// </React.StrictMode>,
 	document.getElementById('root')
 );
